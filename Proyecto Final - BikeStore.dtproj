@@ -26,11 +26,20 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">LAPTOP-GL75DLIJ</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAeithBRa1E0as6AufW3sGtwAAAAACAAAAAAAQZgAAAAEAACAAAAA8gzoHtSQzfq4FBQEfLie0iYdy38qSCm9XidwEc/l/XQAAAAAOgAAAAAIAACAAAAAAWMTuxVWZd9p3/4+ZO/ZMx5gurAEiE+/k2+fzyL16HJAAAABX6YgKyvsPzQ+yCviNv++ydumxGo8aI6NZkVYd+qHQZlLTGMthrYMxRGPU7FpeBKM9yws56mdJSFSJgixjBj68UtLWp2LhzEBUq9ul4F53fIZSoEVpv55O6PZ8lyTu9aKU3CrpVTf9RArOHEhJ3tLHky5BSrITBWPeL7H2BYNGwZAoFKNfqN92J3C2+2yIWcZAAAAAlo4/8JXV0bNCXDn91/H9QnxLhtrIEFRqtQrv2OuJrwW9i1/cFAdtHM/PtKC+ouimzCXlHSdrDUOUQjHLl2Gs+w==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAeithBRa1E0as6AufW3sGtwAAAAACAAAAAAAQZgAAAAEAACAAAAB4sZ8OSKYQCfCB/M+jEpaR8gDsDBL2J/iflH4rsgUhUAAAAAAOgAAAAAIAACAAAACinnJH7qi44OPDCrn51yFfCR2LeHHstpwxV/otz7h7QJAAAABcn+3du9UJ++GYd+KT7SH6/yfOK1QxSNTysIvthMZwoar1y8KRloYkKQeUYC50kEiP56fL7SWEtBnttpVvBsovzS/ejkVRivBFSyrWeWAaprMou0GCQNMky39IarJ8uYDyKwqFbj8+97M79Inv5ZW431pfkz+R4F19Lm5vx8xVqeZfcuBLiw/wJrJ8D0tlgktAAAAAzxeERhRep6ClxT2gBH/MG2OqoG2E7n5As9z6UXWB4E1KaJOWbohJRGfMvuJl4AOR6DERNa/AP1TRGQJt9QN6YQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="EXT Categories.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="EXT Brands.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="EXT Products.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="EXT Stocks.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="EXT Customers.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="EXT Stores.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="EXT Staffs.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="EXT Orders.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="EXT Order Items.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Orquestrador.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="localhost.BikeStore.conmgr" />
@@ -502,6 +511,159 @@
               </SSIS:Properties>
               <SSIS:Parameters />
             </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="EXT Brands.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{42D16485-4782-4816-BEB6-5EB7555B226C}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">EXT Categories</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{B579870A-45F0-44DA-8EC1-CA2D524907FB}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="EXT Products.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{4FF82976-A359-4BDB-AF92-FBD6A14EB2E4}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">EXT Categories</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">10</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{705F38B4-4725-420B-B430-EA7BA81DE02A}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="EXT Stocks.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{820C0DD1-A227-4192-8C12-FD6E4D13BEE7}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">EXT Stocks</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">11</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{C0849754-4FC4-4367-858D-99897CC82F65}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="EXT Customers.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{5AFCAB5C-7B39-4F99-A68A-D506D88D08D2}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">EXT Customers</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">9</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{271AB09A-F9B7-4C0D-B6A0-E4A8181D96FE}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="EXT Stores.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{9CB62668-0D90-4896-B695-D2ABC28719C2}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">EXT Stores</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">13</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{E8975F33-0744-455B-8D9E-0D2D8EC7178F}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="EXT Staffs.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{C1EC232F-6C5B-4F6D-9F00-80019EAA4B77}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">EXT Staffs</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">14</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{2E787422-B0FB-4918-9DE6-BD571E1DF18A}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="EXT Orders.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{43E3931E-009F-4B0E-BCE0-3F9E20886DDE}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">EXT Orders</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">15</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{F4C8092E-5239-4961-8489-CB50A55670DC}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="EXT Order Items.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{B5368D0F-178B-4A79-A9E0-C0B556647767}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">EXT Order Items</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">14</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{C1BBFD61-581B-48C6-8979-89AF2B83EF0B}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Orquestrador.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{41DECD2A-ED94-400C-AEC0-6ED0DE7D16AA}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Orquestrador</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">4</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{5C77DAF8-CD16-4C36-B4DC-4B2D79DAA3C9}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
           </SSIS:PackageInfo>
         </SSIS:DeploymentInfo>
       </SSIS:Project>
@@ -525,7 +687,13 @@
         <LinkedAzureSSISIR />
         <LinkedAzureStorage />
         <RemoteExecutionFolder />
-        <ParameterConfigurationValues />
+        <ParameterConfigurationValues>
+          <ConfigurationSetting>
+            <Id>LastModifiedTime</Id>
+            <Name>LastModifiedTime</Name>
+            <Value xsi:type="xsd:dateTime">2026-08-22T16:41:04.6151826Z</Value>
+          </ConfigurationSetting>
+        </ParameterConfigurationValues>
       </Options>
     </Configuration>
   </Configurations>
