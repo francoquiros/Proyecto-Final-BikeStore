@@ -1,7 +1,6 @@
 -- =============================================================
--- BikeStoreDW - Paso 2: Poblar DIM_FECHA
--- Ejecutar CONECTADO a BikeStoreDW
--- Requiere: DIM_FECHA ya creada (ver 01_create_dw_tables.sql)
+-- BikeStoreDW - Paso 2: Poblar DIM_DATE
+-- Requiere: DIM_DATE ya creada (ver 01_create_dw_tables.sql)
 --
 -- Genera una fila por dia de 2015-01-01 a 2019-12-31.
 -- Rango mas amplio que los datos (2016-2018) para cubrir
@@ -12,31 +11,31 @@
 USE [BikeStoreDW];
 GO
 
-;WITH Fechas AS (
-    SELECT CAST('2015-01-01' AS DATE) AS f
+;WITH Dates AS (
+    SELECT CAST('2015-01-01' AS DATE) AS d
     UNION ALL
-    SELECT DATEADD(DAY, 1, f)
-    FROM Fechas
-    WHERE f < '2019-12-31'
+    SELECT DATEADD(DAY, 1, d)
+    FROM Dates
+    WHERE d < '2019-12-31'
 )
-INSERT INTO dbo.DIM_FECHA
-    (fecha_key, fecha_completa, dia, mes, nombre_mes, trimestre, ano,
-     dia_semana, nombre_dia, es_fin_semana)
+INSERT INTO dbo.DIM_DATE
+    (date_key, full_date, day, month, month_name, quarter, year,
+     day_of_week, day_name, is_weekend)
 SELECT
-    CONVERT(INT, FORMAT(f, 'yyyyMMdd')) AS fecha_key,   -- ej. 20170315
-    f                                    AS fecha_completa,
-    DAY(f)                               AS dia,
-    MONTH(f)                             AS mes,
-    DATENAME(MONTH, f)                   AS nombre_mes,
-    DATEPART(QUARTER, f)                 AS trimestre,
-    YEAR(f)                              AS ano,
-    DATEPART(WEEKDAY, f)                 AS dia_semana,
-    DATENAME(WEEKDAY, f)                 AS nombre_dia,
-    CASE WHEN DATEPART(WEEKDAY, f) IN (1, 7) THEN 1 ELSE 0 END AS es_fin_semana
-FROM Fechas
+    CONVERT(INT, FORMAT(d, 'yyyyMMdd')) AS date_key,   -- ej. 20170315
+    d                                    AS full_date,
+    DAY(d)                               AS day,
+    MONTH(d)                             AS month,
+    DATENAME(MONTH, d)                   AS month_name,
+    DATEPART(QUARTER, d)                 AS quarter,
+    YEAR(d)                              AS year,
+    DATEPART(WEEKDAY, d)                 AS day_of_week,
+    DATENAME(WEEKDAY, d)                 AS day_name,
+    CASE WHEN DATEPART(WEEKDAY, d) IN (1, 7) THEN 1 ELSE 0 END AS is_weekend
+FROM Dates
 OPTION (MAXRECURSION 32767);   -- ~1826 dias, supera el default de 100
 GO
 
 -- Verificacion
-SELECT COUNT(*) AS total_filas FROM dbo.DIM_FECHA;   -- esperado: 1827 (1826 + centinela)
+SELECT COUNT(*) AS total_rows FROM dbo.DIM_DATE;   -- esperado: 1827 (1826 + centinela)
 GO
