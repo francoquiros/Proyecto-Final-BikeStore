@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="FERP"
   DTS:CreatorName="FERP\ferpm"
-  DTS:DTSID="{B8E87681-B1A8-4653-A0AC-0FB44B88A33D}"
+  DTS:DTSID="{154DD982-BF14-4498-9F45-050A9957E699}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="17.0.1016.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="Dim Store"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{06CD43A5-6766-48EF-A6CF-8030C8C00FA6}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{82B7FE2C-11F4-4269-9736-B1CAA0CD62CB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -21,7 +21,7 @@
       DTS:refId="Package\Data Flow Task"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{6D333216-FAC7-497A-BEDD-75CFC264D767}"
+      DTS:DTSID="{624A71AB-9146-420B-BD8D-E62C8C300F84}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Data Flow Task"
@@ -1041,13 +1041,25 @@ FROM sales.stores;</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="144,42"
-          Id="Package\Data Flow Task\Extraer datos"
-          TopLeft="246,5.49999999999989" />
+          Size="165,42"
+          Id="Package\Data Flow Task\Insert Destination"
+          TopLeft="5.50000000000006,209.5" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Data Flow Task\OLE DB Command"
+          TopLeft="231.5,209.5" />
         <NodeLayout
           Size="216,42"
           Id="Package\Data Flow Task\Slowly Changing Dimension"
           TopLeft="210,107.5" />
+        <NodeLayout
+          Size="144,42"
+          Id="Package\Data Flow Task\Extraer datos"
+          TopLeft="246,5.49999999999989" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Data Flow Task\OLE DB Command 1"
+          TopLeft="465,209.5" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
           TopLeft="318,47.4999999999999">
@@ -1070,10 +1082,6 @@ FROM sales.stores;</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="165,42"
-          Id="Package\Data Flow Task\Insert Destination"
-          TopLeft="5.50000000000006,209.5" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[New Output]"
           TopLeft="266,149.5">
@@ -1110,10 +1118,6 @@ FROM sales.stores;</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="173,42"
-          Id="Package\Data Flow Task\OLE DB Command"
-          TopLeft="231.5,209.5" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Inferred Member Updates Output]"
           TopLeft="318,149.5">
@@ -1138,10 +1142,6 @@ FROM sales.stores;</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="182,42"
-          Id="Package\Data Flow Task\OLE DB Command 1"
-          TopLeft="465,209.5" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Changing Attribute Updates Output]"
           TopLeft="370,149.5">
@@ -1181,14 +1181,6 @@ FROM sales.stores;</property>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Extraer datos">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\Slowly Changing Dimension">
     <Properties>
@@ -1248,6 +1240,14 @@ FROM sales.stores;</property>
   &lt;DateVariable /&gt;
   &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Extraer datos">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
