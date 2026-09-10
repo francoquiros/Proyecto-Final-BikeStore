@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="FERP"
   DTS:CreatorName="FERP\ferpm"
-  DTS:DTSID="{2716CB6A-E740-4BBC-A97A-9EC972B7032C}"
+  DTS:DTSID="{C08EE6C0-F13F-4C51-89BB-9A051C0B2829}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="17.0.1016.0"
   DTS:LocaleID="1033"
-  DTS:ObjectName="Package1"
+  DTS:ObjectName="Dim Employee"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{C9DDC787-0F4C-4BDE-BE14-3FC5D8EE2939}">
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{9C6F11BC-D59F-4F5F-A96D-7E18E7574B42}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
