@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Orquestrador"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{5C77DAF8-CD16-4C36-B4DC-4B2D79DAA3C9}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{1D98AB81-FF01-425D-BF03-B9F4F84AF7BC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -248,7 +248,123 @@
           DTS:To="Package\Extract\Stocks" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Transformation"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{A3FCAB33-EA06-4B47-9575-7417AFD354EE}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Transformation">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Transformation\Dim Customer"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{0E8E121B-88DE-48FD-9D4D-B1CBBDD0148A}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Dim Customer"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>Dim customer.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Transformation\Dim Employee"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{5ECB102D-F3E9-48FC-B441-33AB98B60F1F}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Dim Employee"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>Dim Employee.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Transformation\Dim Product"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{4D9CC6AE-0A5B-45A1-95BC-00B930F699B4}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Dim Product"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>Dim Product.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Transformation\Dim Store"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{655526A8-40A8-4B81-B380-C817F9FAD35E}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Dim Store"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>Dim Store.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Transformation.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{1CFD672F-B46C-4CE9-88E3-C57EDA255741}"
+          DTS:From="Package\Transformation\Dim Store"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Transformation\Dim Employee" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Transformation.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{8E0855F2-EA22-4AA0-BDB4-B784B373F230}"
+          DTS:From="Package\Transformation\Dim Employee"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Transformation\Dim Customer" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Transformation.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{A0434ADC-1895-474B-9600-CD54FEC7A616}"
+          DTS:From="Package\Transformation\Dim Customer"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Transformation\Dim Product" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{58CDDD1F-35B1-4070-B8D1-D10B06842E44}"
+      DTS:From="Package\Extract"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Transformation" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -263,40 +379,40 @@
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="191,42"
-          Id="Package\Extract\Categories"
-          TopLeft="36,12" />
-        <NodeLayout
-          Size="191,42"
           Id="Package\Extract\Brands"
           TopLeft="36,75.5" />
         <NodeLayout
           Size="191,42"
-          Id="Package\Extract\Products"
-          TopLeft="36,139" />
+          Id="Package\Extract\Categories"
+          TopLeft="36,12" />
         <NodeLayout
           Size="191,42"
           Id="Package\Extract\Customers"
           TopLeft="36,202.5" />
         <NodeLayout
           Size="191,42"
-          Id="Package\Extract\Stores"
-          TopLeft="36,266" />
-        <NodeLayout
-          Size="191,42"
-          Id="Package\Extract\Staffs"
-          TopLeft="36,329.5" />
+          Id="Package\Extract\Order Items"
+          TopLeft="36,456.5" />
         <NodeLayout
           Size="191,42"
           Id="Package\Extract\Orders"
           TopLeft="36,393" />
         <NodeLayout
           Size="191,42"
-          Id="Package\Extract\Order Items"
-          TopLeft="36,456.5" />
+          Id="Package\Extract\Products"
+          TopLeft="36,139" />
+        <NodeLayout
+          Size="191,42"
+          Id="Package\Extract\Staffs"
+          TopLeft="36,329.5" />
         <NodeLayout
           Size="191,42"
           Id="Package\Extract\Stocks"
           TopLeft="36,520" />
+        <NodeLayout
+          Size="191,42"
+          Id="Package\Extract\Stores"
+          TopLeft="36,266" />
         <EdgeLayout
           Id="Package\Extract.PrecedenceConstraints[Constraint]"
           TopLeft="36,33">
@@ -575,7 +691,118 @@
           PanelSize="262,617"
           Size="262,660"
           Id="Package\Extract"
-          TopLeft="40,55" />
+          TopLeft="40,226.428571428572" />
+        <NodeLayout
+          Size="128,42"
+          Id="Package\Transformation\Dim Store"
+          TopLeft="66,29.8571428571429" />
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Transformation\Dim Customer"
+          TopLeft="54.5714285714288,208.428571428571" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Transformation\Dim Employee"
+          TopLeft="56.0000000000002,112.714285714286" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Transformation\Dim Product"
+          TopLeft="64.5714285714286,284.142857142857" />
+        <EdgeLayout
+          Id="Package\Transformation.PrecedenceConstraints[Constraint]"
+          TopLeft="130.75,71.8571428571429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.8571428571428"
+              Start="0,0"
+              End="0,33.3571428571428">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.3571428571428" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transformation.PrecedenceConstraints[Constraint 1]"
+          TopLeft="130.285714285715,154.714285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53.7142857142857"
+              Start="0,0"
+              End="0,46.2142857142857">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.2142857142857" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transformation.PrecedenceConstraints[Constraint 2]"
+          TopLeft="131.571428571429,250.428571428571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.7142857142859"
+              Start="0,0"
+              End="0,26.2142857142859">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.2142857142859" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="281,404"
+          Size="281,447"
+          Id="Package\Transformation"
+          TopLeft="382.857142857143,332.857142857143" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="302,556.392857142857">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="80.8571428571429,0"
+              Start="0,0"
+              End="73.3571428571429,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="73.3571428571429,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
