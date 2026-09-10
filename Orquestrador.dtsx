@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Orquestrador"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{1D98AB81-FF01-425D-BF03-B9F4F84AF7BC}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{FE25162B-FF79-43CC-B142-1314084A7712}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -249,6 +249,62 @@
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Facts (Hechos)"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{99CF6458-2229-456A-85A6-6570B67D10A9}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Facts (Hechos)">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Facts (Hechos)\Fact Orders"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{F0D445D4-71B1-466C-A38E-D56E470D7B9F}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Fact Orders"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>EXT Orders.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Facts (Hechos)\Fact Sales"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{3A41EEA1-9987-4794-96F1-1E81AC817DD1}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Fact Sales"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>Fact sales.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Facts (Hechos).PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{13F76D08-80C6-473B-BB03-B152498CD709}"
+          DTS:From="Package\Facts (Hechos)\Fact Sales"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Facts (Hechos)\Fact Orders" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Transformation"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
@@ -364,6 +420,14 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Transformation" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{5B49B82F-294D-4404-8E97-96DB57ADF74A}"
+      DTS:From="Package\Transformation"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Facts (Hechos)" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -693,10 +757,6 @@
           Id="Package\Extract"
           TopLeft="40,226.428571428572" />
         <NodeLayout
-          Size="128,42"
-          Id="Package\Transformation\Dim Store"
-          TopLeft="66,29.8571428571429" />
-        <NodeLayout
           Size="149,42"
           Id="Package\Transformation\Dim Customer"
           TopLeft="54.5714285714288,208.428571428571" />
@@ -708,6 +768,10 @@
           Size="139,42"
           Id="Package\Transformation\Dim Product"
           TopLeft="64.5714285714286,284.142857142857" />
+        <NodeLayout
+          Size="128,42"
+          Id="Package\Transformation\Dim Store"
+          TopLeft="66,29.8571428571429" />
         <EdgeLayout
           Id="Package\Transformation.PrecedenceConstraints[Constraint]"
           TopLeft="130.75,71.8571428571429">
@@ -795,6 +859,65 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="73.3571428571429,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="131,42"
+          Id="Package\Facts (Hechos)\Fact Sales"
+          TopLeft="19.75,31.75" />
+        <NodeLayout
+          Size="137,42"
+          Id="Package\Facts (Hechos)\Fact Orders"
+          TopLeft="20.5,120" />
+        <EdgeLayout
+          Id="Package\Facts (Hechos).PrecedenceConstraints[Constraint]"
+          TopLeft="87.125,73.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.25"
+              Start="0,0"
+              End="0,38.75">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.75" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="163,223"
+          Size="163,266"
+          Id="Package\Facts (Hechos)"
+          TopLeft="790,417.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="663.857142857143,553.428571428572">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="126.142857142857,0"
+              Start="0,0"
+              End="118.642857142857,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="118.642857142857,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
